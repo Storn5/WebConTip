@@ -1,0 +1,19 @@
+{
+  "name": "webcontip",
+  "version": "1.0.0",
+  "description": "Simple SPA project with login functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Storn5/WebConTip.git"
+  },
+  "author": "Storn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Storn5/WebConTip/issues"
+  },
+  "homepage": "https://github.com/Storn5/WebConTip#readme"
+}
