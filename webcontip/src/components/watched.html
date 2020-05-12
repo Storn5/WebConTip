@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+		<title>Watched Films - ConTip</title> 
+		<link href="./assets/style.css" rel="stylesheet" />
+	</head>
+	<body> 
+		<div className="container">
+			<div className="tm-header">
+				<div className="row-reverse tm-header-inner">
+					<div className="col-md-6 col-12">
+						<div className="tm-site-text-box">
+							<h1 className="tm-site-title">ConTip</h1>
+							<h6 className="tm-site-description">Content recommender for optimal free time experience</h6>	
+						</div>
+					</div>
+					<nav className="col-md-6 col-12 tm-nav">
+						<ul className="tm-nav-ul">
+							<li className="tm-nav-li"><a href="index.html" className="tm-nav-link">Home</a></li>
+							<li className="tm-nav-li"><a href="profile.html" className="tm-nav-link">Profile</a></li>
+							<li className="tm-nav-li"><a href="search.html" className="tm-nav-link">Search</a></li>
+							<li className="tm-nav-li"><a href="watched.html" className="tm-nav-link active">Watched</a></li>
+							<li className="tm-nav-li"><a href="login.html" className="tm-nav-link">Login</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<main>
+				<header className="row tm-welcome-section">
+					<h2 className="col-12 text-center tm-section-title">Watched Movies</h2>
+					<p className="col-12 text-center">...where you can find a list of all the movies you have already watched.</p>
+				</header>
+
+				<div className="tm-section">
+					<ul>
+						<li>
+							<a href="film.html"><h4 className="tm-gallery-title">The First Movie</h4></a>
+							<p className="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+							<p className="tm-gallery-price">$45</p>
+						</li>
+						<li>
+							<a href="film.html"><h4 className="tm-gallery-title">The Second Movie</h4></a>
+							<p className="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+							<p className="tm-gallery-price">$65</p>
+						</li>
+						<li>
+							<a href="film.html"><h4 className="tm-gallery-title">The Third Movie</h4></a>
+							<p className="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+							<p className="tm-gallery-price">$30.50</p>
+						</li>
+						<li>
+							<a href="film.html"><h4 className="tm-gallery-title">The Fourth Movie</h4></a>
+							<p className="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+							<p className="tm-gallery-price">$25.50</p>
+						</li>
+					</ul>
+				</div>
+			</main>
+
+			<footer className="tm-footer text-center">
+				<div className="tm-container-inner-2 tm-contact-section row col-md-6">
+					<h2>You Think We Don't Know That One Unique, Artistic, Extraordinary Movie?<br>Recommend It To Us!<br><br></h2>
+					<form action="#" method="POST" className="tm-contact-form">
+						<input type="text" name="name" className="form-control" placeholder="Movie Name" />
+						<input type="email" name="email" className="form-control" placeholder="Rating out of 10" />
+						<textarea rows="5" name="message" className="form-control" placeholder="IMDB Link"></textarea>
+						<button type="submit" className="tm-btn">Send</button>
+					</form>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
