@@ -1,15 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
-const Checkbox = ({ id, name, text, isSelected, onCheckboxChange }) => (
-	<div style={{ display: "inline-block" }}>
-		<input
-			id={ id }
-			type="checkbox"
-			name={ name }
-			checked={ isSelected }
-			onChange={ onCheckboxChange } />
-		<label htmlFor={ id }>{ text }</label>
-	</div>
-);
+class Checkbox extends Component {
+  static get propTypes() {
+    return {
+      id: PropTypes.any,
+      onCheckboxChange: PropTypes.any,
+      name: PropTypes.any,
+      isSelected: PropTypes.any,
+      text: PropTypes.any
+    };
+  }
+  render() {
+    return(
+      <div style={{ display: "inline-block" }}>
+        <input
+          id={ this.props.id }
+          type="checkbox"
+          name={ this.props.name }
+          checked={ this.props.isSelected }
+          onChange={ this.props.onCheckboxChange } />
+        <label htmlFor={ this.props.id }>{ this.props.text }</label>
+      </div>
+    );
+  }
+}
 
 export default Checkbox;

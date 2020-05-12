@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import history from './history';
+import PropTypes from 'prop-types';
 
 import SignUpForm from "./SignUpForm";
 
 class LoginForm extends Component{
+  static get propTypes() {
+    return {
+      history: PropTypes.any,
+    };
+  }
   constructor(props) {
     super(props);
     this.state = {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 import WelcomeText from "./WelcomeText";
 import Checkbox from "./Checkbox";
@@ -6,6 +7,11 @@ import Checkbox from "./Checkbox";
 let GENRES = [];
 
 class ProfileForm extends Component{
+  static get propTypes() {
+    return {
+      history: PropTypes.any,
+    };
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -269,7 +275,7 @@ class ProfileForm extends Component{
             {this.state.data.map(genre => {
               let genreName = "genre" + genre.id;
                 return (
-                  <Checkbox
+                  <Checkbox key={genre.id}
                     id={ genreName }
                     name={ genre.id }
                     text={ genre.name }
