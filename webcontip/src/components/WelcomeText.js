@@ -45,6 +45,7 @@ class WelcomeText extends Component {
 		return (
 			<div>
 				<h2>Welcome, {this.state.data.username}!</h2>
+				<p>Email: {this.state.data.email}</p>
 			</div>
 		);
 	}

@@ -74,7 +74,7 @@ class ProfileForm extends Component{
     })
   }
 
-  handlePreferenceSubmit = (preferenceSubmitEvent, addToast) => {
+  handlePreferenceSubmit = (preferenceSubmitEvent) => {
     preferenceSubmitEvent.preventDefault();
 
     const selectedPreferences = (Object
@@ -99,12 +99,12 @@ class ProfileForm extends Component{
       .then(res => {
         console.log(res);
         if (res.status != 200){
-          addToast("Something went wrong", { appearance: 'error', autoDismiss: true, });
+          alert("Something went wrong");
 
         }
         else {
           this.props.history.push("/profile/");
-          addToast("Preferences changed successfully!", { appearance: 'success', autoDismiss: true, });
+          alert("Preferences changed successfully!");
         }
         return res.json();
       });
@@ -117,7 +117,7 @@ class ProfileForm extends Component{
     this.props.history.push("/login/");
   }
 
-  handleEmailSubmit = (event, addToast) => {
+  handleEmailSubmit = (event) => {
     event.preventDefault();
     // Update user email
   const access_token = localStorage.getItem('jwt access');
@@ -134,17 +134,17 @@ class ProfileForm extends Component{
       .then(res => {
         console.log(res);
         if (res.status != 200){
-          addToast("Something went wrong", { appearance: 'error', autoDismiss: true, });
+          alert("Something went wrong");
         }
         else {
           this.props.history.push("/profile/");
-          addToast("Email changed successfully!", { appearance: 'success', autoDismiss: true, });
+          alert("Email changed successfully!");
         }
         return res.json();
       });
   }
 
-  handlePasswordSubmit = (event, addToast) => {
+  handlePasswordSubmit = (event) => {
     if (this.state.password == this.state.confirmPassword) {
       event.preventDefault();
       // Update user password
@@ -162,7 +162,7 @@ class ProfileForm extends Component{
         .then(res => {
           console.log(res);
           if (res.status != 204){
-            addToast("Something went wrong", { appearance: 'error', autoDismiss: true, });
+            alert("Something went wrong");
           }
           else {
             this.props.history.push("/login/");
@@ -172,12 +172,12 @@ class ProfileForm extends Component{
     }
     else {
       event.preventDefault();
-      addToast("Passwords do not match!", { appearance: 'error', autoDismiss: true, });
+      alert("Passwords do not match!");
     }
   }
 
-  handleDeleteProfile = (event, addToast) => {
-    addToast("Profile deletion request submitted!", { appearance: 'info', autoDismiss: true, });
+  handleDeleteProfile = () => {
+    alert("Profile deletion request submitted!");
     // Delete user
     const access_token = localStorage.getItem('jwt access');
     let options = {
@@ -193,7 +193,7 @@ class ProfileForm extends Component{
       .then(res => {
         console.log(res);
         if (res.status != 204){
-          addToast("Something went wrong", { appearance: 'error', autoDismiss: true, });
+          alert("Something went wrong");
         }
         else {
           this.props.history.push("/signup/");
@@ -293,12 +293,12 @@ class ProfileForm extends Component{
 					<h3>Change Password<br /><br /></h3>
 					<form onSubmit={this.handlePasswordSubmit} method="POST">
 						<input type="password" value={this.state.password} onChange={this.handlePasswordChange} name="password" className="form-control" placeholder="New Password" />
-						<input type="password" value={this.state.confirmPassword} onChange={this.handleConfirmPasswordChange} name="re_password" className="form-control" placeholder="New New Password" />
+						<input type="password" value={this.state.confirmPassword} onChange={this.handleConfirmPasswordChange} name="re_password" className="form-control" placeholder="Confirm New Password" />
 						<button type="submit" className="tm-btn">Change</button>
 					</form>
 					<h3>Delete Account<br /><br /></h3>
 					<form onSubmit={this.handleDeleteProfile} method="POST">
-            <input type="password" value={this.state.deletePassword} onChange={this.handleDeletePasswordChange} name="del_password" className="form-control" placeholder="New Password" />
+            <input type="password" value={this.state.deletePassword} onChange={this.handleDeletePasswordChange} name="del_password" className="form-control" placeholder="Password" />
 						<button type="submit" className="tm-btn">Delete Account</button>
 					</form>
           <h3>Log Out<br /><br /></h3>
