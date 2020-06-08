@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
 import MovieList from "./MovieList";
 import Header from "./Header";

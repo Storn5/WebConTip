@@ -41,7 +41,6 @@ class SignUpForm extends Component{
     if (this.state.password == this.state.re_password) {
       alert('Success! Authenticate me!');
       event.preventDefault();
-      // Authenticate User
       let options = {
         method: "POST",
         body: JSON.stringify(this.state),
@@ -55,7 +54,6 @@ class SignUpForm extends Component{
           if (res.status != 201){
             alert("Something went wrong");
           }
-          //this.props.history.push("/login/");
           return res.json();
         });
     }

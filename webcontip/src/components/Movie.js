@@ -1,6 +1,7 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
 import RateButton from "./RateButton";
-
 
 class Movie extends Component {
 	constructor(props) {

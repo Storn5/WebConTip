@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
 
 class RecommendationFilm extends Component {
@@ -9,13 +11,6 @@ class RecommendationFilm extends Component {
         };
     }
 
-    /**
-     * Returns a random integer between min (inclusive) and max (inclusive).
-     * The value is no lower than min (or the next integer greater than min
-     * if min isn't an integer) and no greater than max (or the next integer
-     * lower than max if max isn't an integer).
-     * Using Math.round() will give you a non-uniform distribution!
-     */
     getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -58,9 +53,7 @@ class RecommendationFilm extends Component {
 
         if (this.state.loaded_tmdb) {
             image = <img src={ "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + this.state.tmdb.poster_path } alt={ this.props.title } className="img-fluid tm-gallery-img" />
-        }
-
-        if (!this.state.loaded_tmdb) {
+        } else {
             this.loadTMDB();
         }
 
@@ -74,17 +67,6 @@ class RecommendationFilm extends Component {
 								</figcaption>
 							</figure>
             </article>
-            /*
-              <span className="image">
-                    { image }
-                </span>
-                <a href={ this.props.href }>
-                    <h2>{ this.props.title }</h2>
-                    <div className="content">
-                        <p>Genre: { this.props.genre }</p>
-                    </div>
-                </a>
-            */
         );
     }
 }

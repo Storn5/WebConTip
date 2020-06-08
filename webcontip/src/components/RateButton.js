@@ -1,7 +1,7 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
 import SendButton from "./SendButton";
-
-
 
 class RateButton extends Component {
 	handleClick = (event) => {
@@ -13,7 +13,6 @@ class RateButton extends Component {
 		}
 		else {
 			event.preventDefault();
-			// Create movie rating
 			const access_token = localStorage.getItem('jwt access');
 			let options = {
 				method: "POST",

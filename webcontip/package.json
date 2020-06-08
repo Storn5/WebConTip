@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
@@ -19,6 +18,28 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint **/*.js --ignore-pattern node_modules/"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/{SignUpForm,index,Checkbox,FilmPage,history,IndexPage,Movie,MovieList,ProfileForm,ProfilePage,RateButton,RecommendationFilm,SendButton,WatchedMoviesList,WatchedMoviesPage,WelcomeText}.js",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "json",
+      "clover",
+      "lcov"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,7 +57,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^9.5.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "jest-dom": "^4.0.0",
+    "react-test-renderer": "^16.13.1"
   }
 }

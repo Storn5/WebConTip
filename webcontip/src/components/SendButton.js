@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React from "react";
 
 const SendButton = (props) => {
@@ -15,7 +17,6 @@ const Button = (props) => {
 		return (
 			<div className="col-6 col-12-medium">
 				<ul className="actions stacked">
-					{/* <li><a href="#" className="button small fit">Delete Account</a></li> */}
 					<li id={ props.id }><a href="#" className="button small fit" onClick={ onClick } >{ props.buttonName }</a></li>
 				</ul>
 			</div>

@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
 import Movie from "./Movie";
 
@@ -9,18 +11,9 @@ class WatchedMovieList extends Component {
             loaded: false,
             placeholder: "Loading"
         };
-        // for (var i = 0; i <= 100; i++) {
-        //     this.setState(prevState => ({
-        //         movie_ratings: { ...prevState.movie_ratings, [i]: "" }
-        //     }));
-        // }
     }
 
     get_films = async (film_ids, options) => {
-
-        /* 
-            Functions that makes get requests simultaneously and returns films data
-        */
 
         let fetches = [];
         let jsones = [];
@@ -28,7 +21,6 @@ class WatchedMovieList extends Component {
         let responses;
         let data;
 
-        // GETTING RESPONSES
         for (const id of film_ids.watched_list) {
             fetches.push(fetch(`http://localhost:8000/api/v1/app/film/detail/${id}/`, options));
             console.log(id);
@@ -39,9 +31,8 @@ class WatchedMovieList extends Component {
         }
         catch (err) {
             console.log(err);
-        };
+        }
 
-        //
         for (const response of responses) {
             jsones.push(response.json());
         }
@@ -51,7 +42,7 @@ class WatchedMovieList extends Component {
         }
         catch (err) {
             console.log(err);
-        };
+        }
 
         return data;
     };
@@ -67,10 +58,8 @@ class WatchedMovieList extends Component {
             }
         }
 
-        // GETTINGS FILM IDS
         const response = await fetch(`http://localhost:8000/api/v1/app/watched/set/`, options);
 
-        // IF 401 THEN LOGIN
         if (response.status === 401) {
             this.props.history.push("/login");
             return this.setState(() => {

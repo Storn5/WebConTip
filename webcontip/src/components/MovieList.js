@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
 
 import RecommendationFilm from "./RecommendationFilm";
@@ -26,7 +28,6 @@ class MovieList extends Component {
             .then(response => {
                 console.log(response);
                 if (response.status > 400) {
-                    //<Redirect to="/login" />
                     this.props.history.push("/login/");
                     return this.setState(() => {
                         return { placeholder: "Something went wrong!" };

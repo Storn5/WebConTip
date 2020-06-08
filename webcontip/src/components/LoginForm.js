@@ -65,10 +65,10 @@ class LoginForm extends Component{
         </header>
 
         <div className="tm-section">
-          <form onSubmit={this.handleSubmit} method="POST">
-            <input type="text" value={this.state.username} onChange={this.handleUsernameChange} name="text" className="form-control" placeholder="Username" />
-            <input type="password" value={this.state.password} onChange={this.handlePasswordChange} name="password" className="form-control" placeholder="Password" />
-            <button type="submit" className="tm-btn">Log In</button>
+          <form id="input-auth-form" onSubmit={this.handleSubmit} method="POST">
+            <input id="input-auth-username" type="text" value={this.state.username} onChange={this.handleUsernameChange} name="text" className="form-control" placeholder="Username" />
+            <input id="input-auth-password" type="password" value={this.state.password} onChange={this.handlePasswordChange} name="password" className="form-control" placeholder="Password" />
+            <button id="input-auth-button" type="submit" className="tm-btn">Log In</button>
           </form>
           <SignUpForm history={this.props.history} />
         </div>
@@ -77,5 +77,8 @@ class LoginForm extends Component{
   }
 }
 
+// LoginForm.defaultProps = {
+//   handleSubmit: LoginForm.handleSubmit,
+// };
 
 export default LoginForm;
